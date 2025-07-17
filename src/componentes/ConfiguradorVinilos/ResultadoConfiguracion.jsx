@@ -195,6 +195,7 @@ const ResultadoConfiguracion = ({
             <div className="carga-opcion-item">
               <input
                 type="text"
+                id="inputImageneUrl"
                 className="input-url-imagen"
                 placeholder="Pega la URL de la imagen aquí (ej: https://ejemplo.com/img.png)"
                 value={urlImagenInput}
