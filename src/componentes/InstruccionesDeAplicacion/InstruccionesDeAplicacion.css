@@ -1,0 +1,165 @@
+
+.aside-aplicacion {
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0px;
+    border: none;
+    border-radius: 25px;
+    background-image: url('/imagenes/mods.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.aside-aplicacion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    z-index: 0;
+}
+
+.aside-aplicacion > section,
+.aside-aplicacion > div {
+    position: relative;
+    z-index: 1;
+}
+
+.flex-vestir {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px 0;
+    padding: 16px;
+}
+
+.paso {
+    width: 100%;
+    padding: 20px; /* Aumentado el padding para que tenga márgenes en los cuatro lados */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #0e0e0e;
+    display: flex;
+    flex-direction: row; /* Mantenemos row para que la imagen y el texto intenten estar en la misma línea */
+    flex-wrap: wrap; /* ¡Clave! Permite que los ítems se envuelvan a la siguiente línea */
+    justify-content: flex-start;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor flex */
+    gap: 15px; /* Espacio entre la imagen y el texto cuando están en la misma línea */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-paso {
+    border-radius: 13px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    /* Si queremos que el texto vaya debajo, la imagen no debe influir en el espacio horizontal del texto */
+    /* margin-right: 15px; */ /* Si se usa flex-wrap y se quiere que el texto fluya debajo */
+}
+
+.texto-paso {
+    font-size: 1.em;
+    line-height: 1.6;
+    flex-grow: 1; /* Permite que el texto crezca y ocupe el espacio disponible */
+    flex-basis: calc(100% - 115px); /* Calcula el espacio restante (100% - ancho_imagen - gap). Ajusta si el gap es diferente */
+    /* Para que el texto vaya por debajo, si la imagen ocupa una línea completa.
+       Podríamos forzar una nueva línea con flex-basis: 100% o haciendo el .paso column */
+}
+
+/* Media Query para forzar el apilamiento de la imagen y el texto en columnas */
+@media (max-width: 600px) { /* Ajusta este breakpoint según veas en tu diseño */
+    .paso {
+        flex-direction: column; /* Apila la imagen y el texto verticalmente */
+        align-items: center; /* Centra la imagen y el texto cuando están apilados */
+        text-align: center; /* Centra el texto */
+    }
+    .imagen-paso {
+        margin-bottom: 15px; /* Espacio entre la imagen y el texto cuando están apilados */
+        margin-right: 0; /* Elimina el margen derecho si se apilan */
+    }
+    .texto-paso {
+        flex-basis: 100%; /* Asegura que el texto ocupe todo el ancho disponible debajo de la imagen */
+    }
+}
+
+.seccion-descargas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    width: 90%;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-descarga,
+.instrucciones-descarga {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-descargas h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    text-align: center;
+    color: white;
+}
+
+.imagen-descarga {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.imagen-descarga:hover {
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .seccion-descargas {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+    .tarjeta-descarga,
+    .instrucciones-descarga {
+        margin-bottom: 0;
+    }
+    .paso {
+        /* Si en pantallas grandes queremos que se mantenga imagen a la izquierda y texto a la derecha */
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+}

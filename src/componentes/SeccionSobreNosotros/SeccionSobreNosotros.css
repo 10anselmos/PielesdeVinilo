@@ -1,0 +1,13 @@
+
+.titu {
+  color: #ff6600;
+  font-weight: lighter;
+  font-family: calistoga;
+  list-style-type: none;
+}
+.about-section p { 
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding: 0 15px; 
+}

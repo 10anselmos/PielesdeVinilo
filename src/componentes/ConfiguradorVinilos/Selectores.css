@@ -1,0 +1,351 @@
+/* Selectores.css */
+
+.configurador-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #db450a4f;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Corregido el rgba */
+    font-family: 'aerial', sans-serif; /* Puedes usar tu fuente preferida */
+}
+
+.titu {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.sub-titu {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.item-selector {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.item-selector:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(252, 164, 2, 0.801);
+}
+
+.item-selector.seleccionado {
+    border-color: #ff9100; /* Color de realce para el seleccionado */
+    box-shadow: 0 0 15px rgba(224, 247, 21, 0.705);
+    transform: scale(1.02);
+}
+
+/* Estilos para el resultado de la configuración */
+.resultado-configuracion {
+    margin-top: 50px;
+    padding: 30px;
+    /*background-color: #0bf7896c;
+    border-radius: 10px;
+    border: 1px solid #0bf789;
+    box-shadow: 0 4px 12px rgba(0, 110, 28, 0.616);*/
+}
+
+.resultado-configuracion h3 {
+    color: #ff9100;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Estilos para la nueva tarjeta de resumen de configuración */
+.resumen-configuracion-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Añadido un box-shadow si se borró */
+    text-align: left;
+}
+
+.resumen-configuracion-card .resumen-item {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.resumen-configuracion-card .resumen-label {
+    color: #0056b3;
+    min-width: 120px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.resumen-configuracion-card .resumen-imagen-compacta {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-left: auto;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.resultado-configuracion .sub-titu {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/* --- INICIO DE ESTILOS PARA GESTIÓN DE IMÁGENES (PUNTO 9) --- */
+
+.opcion-estampado {
+    margin-top: 30px;
+    padding: 20px;
+    /*background-color: #f0f8ff;
+    border: 1px solid #cce0f0;*/
+    border-radius: 8px;
+    text-align: center;
+}
+
+/*.opcion-estampado h4 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}*/
+
+.opcion-estampado p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Oculta el input de archivo real para poder estilizar el label */
+.input-file-estampado-oculto {
+    display: none;
+}
+
+/* Estilo para el LABEL que actúa como botón de "Seleccionar Imágenes" */
+.custom-file-upload-multiple {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #28a745; /* Color verde para la acción de subir */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.custom-file-upload-multiple:hover {
+    background-color: #218838;
+}
+
+.preview-imagenes-estampado {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan */
+    gap: 15px; /* Espacio entre las miniaturas */
+    justify-content: center; /* Centra las miniaturas */
+    margin-top: 20px;
+    border: 1px dashed #ced4da; /* Borde punteado para el área de previsualización */
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 100px; /* Asegura un área visible */
+    align-items: center; /* Centra verticalmente el contenido si está vacío */
+}
+
+.imagen-estampado-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 120px; /* Ancho fijo para cada tarjeta de imagen */
+    text-align: center;
+}
+
+.imagen-preview-mini {
+    max-width: 100%;
+    height: 80px; /* Altura fija para la previsualización */
+    object-fit: contain; /* Ajusta la imagen sin recortarla */
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.nombre-archivo-subido {
+    font-size: 0.75em;
+    color: #495057;
+    word-break: break-all; /* Rompe palabras largas */
+    margin-bottom: 5px;
+}
+
+.no-archivo-seleccionado {
+    color: #6c757d;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column; /* Botones apilados */
+    gap: 5px;
+    width: 100%;
+}
+
+/* Estilos para botones genéricos (ajusta si ya tienes una librería como Bootstrap) */
+.btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* Estilo para el LABEL que actúa como botón de "Reemplazar" */
+.btn-replace-image {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+}
+
+.btn-replace-image input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0; /* Hace el input invisible pero clicable */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* --- FIN DE ESTILOS PARA GESTIÓN DE IMÁGENES --- */
+
+
+.boton-confirmar {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.boton-confirmar:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.boton-personalizar {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.boton-personalizar:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Estilos para la TarjetaTipoVinilo en modo compacto */
+.cardBodyViniloCompacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    min-height: 180px;
+}
+
+.imagenViniloCompacta {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.cardTitleViniloCompacto {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+}
+.cardTexturaCompacta{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.item-selector .dropvinilos-content {
+    display: none !important;
+}
+
+.item-selector.seleccionado .cardBodyViniloCompacto {
+    border-color: #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}

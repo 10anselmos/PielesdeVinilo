@@ -1,0 +1,73 @@
+
+
+.galcontainer {
+    padding: 20px;
+    text-align: center;
+}
+
+.galcontainer .titu { 
+    margin-bottom: 30px;
+}
+
+.videocontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.video {
+    width: 300px; 
+    height: 180px; 
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    position: relative;
+    background-color: #000; 
+}
+
+.video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.video:hover video {
+    filter: brightness(0.8); 
+}
+
+.popupvideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column; 
+}
+
+.popupvideo span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.popupvideo video {
+    max-width: 90%;
+    max-height: 90vh; 
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}

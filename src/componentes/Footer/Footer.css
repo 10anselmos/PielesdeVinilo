@@ -1,0 +1,43 @@
+/* footer.css */
+
+/* Estilos para el contenedor principal del footer */
+.footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 95%;
+    height: auto;
+    padding: 5px;
+    background-image: url(/imagenes/peakpx3.jpg);
+    background-size: 100% auto;
+    background-origin: border-box;
+}
+
+/* Contenedor de las columnas dentro del footer */
+.columnas320 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Contenedor para los íconos de redes sociales */
+.linkspngs {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+    justify-content: space-around;
+}
+
+/* Contenedor para los párrafos de derechos de autor, etc. */
+.divpfooter {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 0px;
+}

@@ -1,0 +1,137 @@
+/* src/components/ModelosYTamanos/ModelosYTamanos.css */
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; 
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.cardBody {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    width: 280px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.cardImage {
+    max-width: 100%;
+    height: 200px; 
+    object-fit: contain; 
+    border-radius: 8px;
+    margin-bottom: 1px;
+}
+
+.cardTitle {
+    font-size: 1.5em;
+    margin-bottom: 1px;
+    color: #333;
+}
+
+.cardInfo {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 1px;
+    flex-grow: 1; 
+}
+.size{
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 1px;
+    flex-grow: 1;
+}
+
+.producCardPrice {
+    margin-top: 1px;
+    margin-bottom: 20px;
+}
+
+.producCardPrice b {
+    font-size: 0.8em;
+    color: #ce8e04; 
+    display: block;
+    margin-bottom: 1px;
+}
+
+.producCardPrice span {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.cardBody button {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.cardBody button:hover {
+    background-color: #218838;
+}
+
+.todaslasplant {
+    display: block; 
+    margin: 40px auto;
+    max-width: 90%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* --- Estilos para TarjetaModelo en modo compacto --- */
+
+.item-selector .cardBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 180px; /* Mantener la altura que tenías */
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Opcional: Establecer un ancho máximo para el cardBody en el selector para asegurar que se vea compacto */
+    max-width: 140px; /* Esto asegura que el cardBody no crezca más allá del minmax de la cuadrícula */
+}
+
+.item-selector .cardImage {
+    max-width: 100%; /* Asegura que la imagen no exceda el nuevo ancho reducido del contenedor */
+    max-height: 120px; /* Mantener la altura máxima de la imagen */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.item-selector .cardTitle {
+    font-size: 0.9rem; /* Podrías querer reducir un poco más el tamaño de la fuente para que quepa bien en el nuevo ancho */
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    line-height: 1.2;
+    margin-top: 5px;
+    word-break: break-word;
+    /* Opcional: Asegurar que el título no desborde si es muy largo */
+    width: 100%; /* El título ocupa todo el ancho disponible */
+    white-space: normal; /* Permite saltos de línea */
+}
+
+.item-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px; /* Mantener la altura mínima del contenedor de selección */
+    text-align: center;
+}
